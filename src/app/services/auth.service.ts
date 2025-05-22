@@ -1,18 +1,33 @@
-// src/app/services/auth.service.ts
+// auth.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/users'; // URL de json-server
+  private isAuthenticated = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private router: Router) {}
 
-  // Método login con tipado explícito
-  login(username: string, password: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}?username=${username}&password=${password}`);
+  login(credentials: any): boolean {
+    // Lógica de autenticación (simulada)
+    if (credentials.username === 'admin' && credentials.password === 'admin') {
+      this.isAuthenticated = true;
+      localStorage.setItem('token', 'fake-jwt-token');
+      this.router.navigate(['/app']); // Redirige al layout principal
+      return true;
+    }
+    return false;
+  }
+
+  logout() {
+    this.isAuthenticated = false;
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
+  }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
   }
 }
