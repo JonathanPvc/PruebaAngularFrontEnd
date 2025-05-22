@@ -48,12 +48,29 @@ onSubmit() {
   if (this.loginForm.invalid) return;
 
   this.loading = true;
-  
-  if (this.authService.login(this.loginForm.value)) {
-    // Redirección se maneja en el authService
-  } else {
-    this.error = 'Credenciales incorrectas';
-    this.loading = false;
-  }
+  this.error = null;
+
+  // Extrae valores asegurando que no son null
+  const username = this.loginForm.value.username ?? '';
+  const password = this.loginForm.value.password ?? '';
+
+  // Crea objeto con tipos correctos
+  const credentials = {
+    username: username,
+    password: password
+  };
+
+  this.authService.login(credentials).subscribe({
+    next: (success) => {
+      if (!success) {
+        this.error = 'Credenciales incorrectas';
+      }
+      this.loading = false;
+    },
+    error: (err) => {
+      this.error = err.message || 'Error en el login';
+      this.loading = false;
+    }
+  });
 }
 }
