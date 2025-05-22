@@ -26,9 +26,10 @@ import { CommonModule } from '@angular/common';
     MatError
   ],
   templateUrl: './login.component.html',
-  styleUrls: []
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  hidePassword = true; // Control para mostrar/ocultar contraseña
   loading = false;
   error: string | null = null;
   loginForm;
@@ -39,38 +40,40 @@ export class LoginComponent {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['', [Validators.required, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(3)]]
     });
   }
-// login.component.ts
-onSubmit() {
-  if (this.loginForm.invalid) return;
 
-  this.loading = true;
-  this.error = null;
+  togglePasswordVisibility(): void {
+    this.hidePassword = !this.hidePassword;
+  }
 
-  // Extrae valores asegurando que no son null
-  const username = this.loginForm.value.username ?? '';
-  const password = this.loginForm.value.password ?? '';
+  onSubmit(): void {
+    if (this.loginForm.invalid) return;
 
-  // Crea objeto con tipos correctos
-  const credentials = {
-    username: username,
-    password: password
-  };
+    this.loading = true;
+    this.error = null;
 
-  this.authService.login(credentials).subscribe({
-    next: (success) => {
-      if (!success) {
-        this.error = 'Credenciales incorrectas';
+    const credentials = {
+      username: this.loginForm.value.username ?? '',
+      password: this.loginForm.value.password ?? ''
+    };
+
+    this.authService.login(credentials).subscribe({
+      next: (success) => {
+        this.loading = false;
+        if (success) {
+          this.router.navigate(['/app']);
+        } else {
+          this.error = 'Credenciales incorrectas';
+        }
+      },
+      error: (err) => {
+        this.loading = false;
+        this.error = err.message || 'Error en el servicio. Intente nuevamente.';
+        console.error('Login error:', err);
       }
-      this.loading = false;
-    },
-    error: (err) => {
-      this.error = err.message || 'Error en el login';
-      this.loading = false;
-    }
-  });
-}
+    });
+  }
 }
