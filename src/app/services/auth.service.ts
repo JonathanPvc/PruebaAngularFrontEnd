@@ -8,32 +8,30 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000'; // URL de json-server
+  private apiUrl = 'http://localhost:3000'; 
 
   constructor(
     private http: HttpClient,
     private router: Router
   ) {}
 
-  login(credentials: { username: string, password: string }): Observable<boolean> {
+  login(credentials: { username: string, password: string }): Observable<{success: boolean, message?: string}> {
     return this.http.get<any[]>(
       `${this.apiUrl}/users?username=${credentials.username}&password=${credentials.password}`
     ).pipe(
       map(users => {
         if (users.length === 0) {
-          throw new Error('Credenciales incorrectas');
+          return {success: false, message: 'Credenciales incorrectas'};
         }
         
-        // Guarda el usuario y token en localStorage
         localStorage.setItem('token', 'fake-jwt-token');
         localStorage.setItem('currentUser', JSON.stringify(users[0]));
         
-        this.router.navigate(['/app']);
-        return true;
+        return {success: true};
       }),
       catchError(error => {
         console.error('Error en login:', error);
-        return of(false);
+        return of({success: false, message: 'Error en el servidor'});
       })
     );
   }

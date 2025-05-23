@@ -1,6 +1,34 @@
 # PruebaAngular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.  node 20.0.0
+
+powershell con permisos de admin ejecutar este comando para permisos del jsonServer back local  ------->!important<------ojo
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+instalar en la raiz del proyecto 
+
+npm install 
+
+luego
+
+npm run dev
+
+esto ( npm run dev ) te corre el ng y el servidor local 
+
+
+si te aparece error en el servidor ejecutar
+
+json-server --watch db.json --port 3000
+
+json-server --watch ./server/db.json --port 3000
+
+
+
+
+
+
+
 
 ## Development server
 

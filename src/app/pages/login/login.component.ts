@@ -10,6 +10,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatError } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
+import { delay } from 'rxjs/operators';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +32,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  hidePassword = true; // Control para mostrar/ocultar contraseña
+  hidePassword = true; 
   loading = false;
   error: string | null = null;
   loginForm;
@@ -49,31 +52,81 @@ export class LoginComponent {
     this.hidePassword = !this.hidePassword;
   }
 
-  onSubmit(): void {
-    if (this.loginForm.invalid) return;
+onSubmit(): void {
+  if (this.loginForm.invalid) return;
 
-    this.loading = true;
-    this.error = null;
+  this.loading = true;
+  this.error = null;
 
-    const credentials = {
-      username: this.loginForm.value.username ?? '',
-      password: this.loginForm.value.password ?? ''
-    };
+  const credentials = {
+    username: this.loginForm.value.username || '',
+    password: this.loginForm.value.password || ''
+  };
 
-    this.authService.login(credentials).subscribe({
-      next: (success) => {
+  const startTime = Date.now(); 
+
+  this.authService.login(credentials).pipe(
+    delay(2000)
+  ).subscribe({
+    next: (response) => {
+      const elapsedTime = Date.now() - startTime;
+      const remainingDelay = Math.max(0, 2000 - elapsedTime);
+      
+      setTimeout(() => {
         this.loading = false;
-        if (success) {
-          this.router.navigate(['/app']);
+        if (response.success) {
+          this.router.navigate(['/app']); 
         } else {
-          this.error = 'Credenciales incorrectas';
+          this.error = response.message || 'Credenciales incorrectas';
         }
-      },
-      error: (err) => {
+      }, remainingDelay);
+    },
+    error: (err) => {
+      const elapsedTime = Date.now() - startTime;
+      const remainingDelay = Math.max(0, 2000 - elapsedTime);
+      
+      setTimeout(() => {
         this.loading = false;
-        this.error = err.message || 'Error en el servicio. Intente nuevamente.';
-        console.error('Login error:', err);
-      }
+        this.error = 'Error de conexión con el servidor';
+        console.error('Error en la solicitud:', err);
+      }, remainingDelay);
+    }
+  });
+}
+
+
+showPasswordRecoveryAlert(): void {
+    Swal.fire({
+      title: 'Recuperación de contraseña',
+      text: 'Estamos trabajando en esta funcionalidad. Por favor, contacta al soporte técnico.',
+      icon: 'info',
+      confirmButtonText: 'Entendido',
+      confirmButtonColor: '#2E7D32', 
+      backdrop: `
+        rgba(0,0,0,0.4)
+        url("/assets/images/tech-support.gif")
+        center top
+        no-repeat
+      `
     });
   }
+
+
+  showCreationAlert(): void {
+    Swal.fire({
+      title: 'Creación de cuenta',
+      text: 'Estamos trabajando en esta funcionalidad. Por favor, contacta al soporte técnico.',
+      icon: 'info',
+      confirmButtonText: 'Entendido',
+      confirmButtonColor: '#2E7D32', 
+      backdrop: `
+        rgba(0,0,0,0.4)
+        url("/assets/images/tech-support.gif")
+        center top
+        no-repeat
+      `
+    });
+  }
+
+
 }
