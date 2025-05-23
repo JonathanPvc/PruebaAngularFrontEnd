@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,  // Si estás usando Standalone Components
+  standalone: true, 
   imports: [RouterOutlet],
   template: `
     <!-- Solo contiene el router outlet -->
@@ -29,9 +29,6 @@ import { RouterOutlet } from '@angular/router';
   `]
 })
 export class AppComponent {
-  // Opcional: Loader global
   loading = false;
-  
-  // Si necesitas inyectar servicios para manejo global
   constructor() {}
 }

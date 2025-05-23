@@ -1,1 +1,27 @@
-<p>user-list works!</p>
+<div *ngIf="loading">Cargando usuarios...</div>
+<div *ngIf="error" class="text-red-500">{{ error }}</div>
+
+<table *ngIf="!loading && !error" class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Usuario</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <button class="btn btn-sm btn-primary" (click)="verDetalles(user.id)">
+          Detalles
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

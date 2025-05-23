@@ -1,18 +1,27 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+export interface User {
+  id: number;
+  username: string;
+  name: string;
+  email: string;
+}
+
+@Injectable({
+  providedIn: 'root',
+})
 export class UserService {
-  private users = signal<any[]>([]); // Signal para almacenar usuarios
+  private apiUrl = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) {}
 
-  loadUsers() {
-    this.http.get('http://localhost:3000/users')
-      .subscribe((data: any) => this.users.set(data));
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl);
   }
 
-  getUsers() {
-    return this.users(); // Devuelve la Signal (readonly)
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${id}`);
   }
 }

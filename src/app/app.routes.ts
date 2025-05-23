@@ -9,13 +9,13 @@ export const routes: Routes = [
   { 
     path: '', 
     component: LoginComponent,
-    title: 'Login' // Opcional: mejora SEO/UX
+    title: 'Login' 
   },
   {
     path: 'app',
     component: MainLayoutComponent,
-    canActivate: [AuthGuard], // Usa el nombre de clase correcto
-    title: 'Dashboard', // Opcional
+    canActivate: [AuthGuard], 
+    title: 'Dashboard', 
     children: [
       { 
         path: 'users', 

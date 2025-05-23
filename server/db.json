@@ -6,7 +6,11 @@
       "password": "123",
       "name": "Administrador",
       "email": "admin@example.com",
-      "role": "admin"
+      "role": "admin",
+      "birthdate": "1980-01-15",
+      "age": 44,
+      "address": "Av. Principal 123, Ciudad, País",
+      "phone": "+34 600 123 456"
     },
     {
       "id": 2,
@@ -14,7 +18,227 @@
       "password": "123456",
       "name": "Usuario Normal",
       "email": "usuario@example.com",
-      "role": "user"
+      "role": "user",
+      "birthdate": "1992-06-10",
+      "age": 32,
+      "address": "Calle Secundaria 45, Ciudad, País",
+      "phone": "+34 600 654 321"
+    },
+    {
+      "id": 3,
+      "username": "jdoe",
+      "password": "test123",
+      "name": "John Doe",
+      "email": "jdoe@example.com",
+      "role": "user",
+      "birthdate": "1990-03-22",
+      "age": 34,
+      "address": "123 Main St, New York, USA",
+      "phone": "+1 212 555 1234"
+    },
+    {
+      "id": 4,
+      "username": "asmith",
+      "password": "test123",
+      "name": "Alice Smith",
+      "email": "asmith@example.com",
+      "role": "admin",
+      "birthdate": "1985-11-05",
+      "age": 38,
+      "address": "456 Oak Ave, London, UK",
+      "phone": "+44 20 7946 0958"
+    },
+    {
+      "id": 5,
+      "username": "bwayne",
+      "password": "batman",
+      "name": "Bruce Wayne",
+      "email": "bwayne@waynecorp.com",
+      "role": "user",
+      "birthdate": "1972-02-19",
+      "age": 52,
+      "address": "1007 Mountain Dr, Gotham",
+      "phone": "+1 555 1940 000"
+    },
+    {
+      "id": 6,
+      "username": "ckent",
+      "password": "superman",
+      "name": "Clark Kent",
+      "email": "ckent@dailyplanet.com",
+      "role": "user",
+      "birthdate": "1978-06-18",
+      "age": 46,
+      "address": "344 Clinton St, Metropolis",
+      "phone": "+1 555 1978 001"
+    },
+    {
+      "id": 7,
+      "username": "dprince",
+      "password": "wonder",
+      "name": "Diana Prince",
+      "email": "dprince@amazon.com",
+      "role": "admin",
+      "birthdate": "1984-03-01",
+      "age": 40,
+      "address": "Themyscira Island",
+      "phone": "+30 210 123 4567"
+    },
+    {
+      "id": 8,
+      "username": "pparker",
+      "password": "spiderman",
+      "name": "Peter Parker",
+      "email": "pparker@dailybugle.com",
+      "role": "user",
+      "birthdate": "1995-08-10",
+      "age": 28,
+      "address": "20 Ingram St, Queens, NY",
+      "phone": "+1 718 555 2020"
+    },
+    {
+      "id": 9,
+      "username": "tstark",
+      "password": "ironman",
+      "name": "Tony Stark",
+      "email": "tstark@starkindustries.com",
+      "role": "admin",
+      "birthdate": "1970-05-29",
+      "age": 54,
+      "address": "10880 Malibu Point, Malibu, CA",
+      "phone": "+1 310 555 1963"
+    },
+    {
+      "id": 10,
+      "username": "ssmith",
+      "password": "pass123",
+      "name": "Sarah Smith",
+      "email": "sarah@example.com",
+      "role": "user",
+      "birthdate": "1998-12-12",
+      "age": 25,
+      "address": "789 Pine Rd, Toronto, Canada",
+      "phone": "+1 416 555 7890"
+    },
+    {
+      "id": 11,
+      "username": "mjordan",
+      "password": "jumpman",
+      "name": "Michael Jordan",
+      "email": "mjordan@nba.com",
+      "role": "user",
+      "birthdate": "1963-02-17",
+      "age": 61,
+      "address": "456 Basketball Ave, Chicago, USA",
+      "phone": "+1 312 555 2323"
+    },
+    {
+      "id": 12,
+      "username": "lebron",
+      "password": "king23",
+      "name": "LeBron James",
+      "email": "lebron@nba.com",
+      "role": "user",
+      "birthdate": "1984-12-30",
+      "age": 39,
+      "address": "789 King St, Akron, USA",
+      "phone": "+1 330 555 2323"
+    },
+    {
+      "id": 13,
+      "username": "bfranklin",
+      "password": "kitekey",
+      "name": "Benjamin Franklin",
+      "email": "bfranklin@history.com",
+      "role": "admin",
+      "birthdate": "1706-01-17",
+      "age": 318,
+      "address": "318 Market St, Philadelphia, USA",
+      "phone": "+1 215 555 1706"
+    },
+    {
+      "id": 14,
+      "username": "mcurry",
+      "password": "chef30",
+      "name": "Stephen Curry",
+      "email": "scurry@nba.com",
+      "role": "user",
+      "birthdate": "1988-03-14",
+      "age": 36,
+      "address": "123 Splash Rd, Charlotte, USA",
+      "phone": "+1 704 555 3030"
+    },
+    {
+      "id": 15,
+      "username": "elonmusk",
+      "password": "mars2024",
+      "name": "Elon Musk",
+      "email": "elon@tesla.com",
+      "role": "admin",
+      "birthdate": "1971-06-28",
+      "age": 53,
+      "address": "3500 Deer Creek Rd, Palo Alto, USA",
+      "phone": "+1 650 681 5000"
+    },
+    {
+      "id": 16,
+      "username": "sjobs",
+      "password": "apple123",
+      "name": "Steve Jobs",
+      "email": "sjobs@apple.com",
+      "role": "admin",
+      "birthdate": "1955-02-24",
+      "age": 69,
+      "address": "2066 Crist Dr, Los Altos, USA",
+      "phone": "+1 408 555 1955"
+    },
+    {
+      "id": 17,
+      "username": "granger",
+      "password": "magicwand",
+      "name": "Hermione Granger",
+      "email": "granger@hogwarts.com",
+      "role": "user",
+      "birthdate": "1979-09-19",
+      "age": 44,
+      "address": "Hampstead, London, UK",
+      "phone": "+44 20 5555 1979"
+    },
+    {
+      "id": 18,
+      "username": "hpott",
+      "password": "expelliarmus",
+      "name": "Harry Potter",
+      "email": "harry@hogwarts.com",
+      "role": "user",
+      "birthdate": "1980-07-31",
+      "age": 43,
+      "address": "4 Privet Drive, Little Whinging, UK",
+      "phone": "+44 20 5555 1980"
+    },
+    {
+      "id": 19,
+      "username": "rweasley",
+      "password": "chessking",
+      "name": "Ron Weasley",
+      "email": "ron@hogwarts.com",
+      "role": "user",
+      "birthdate": "1980-03-01",
+      "age": 44,
+      "address": "The Burrow, Ottery St Catchpole, UK",
+      "phone": "+44 20 5555 1981"
+    },
+    {
+      "id": 20,
+      "username": "tswift",
+      "password": "1989lover",
+      "name": "Taylor Swift",
+      "email": "tswift@music.com",
+      "role": "admin",
+      "birthdate": "1989-12-13",
+      "age": 34,
+      "address": "13 Swift St, Nashville, USA",
+      "phone": "+1 615 555 1313"
     }
   ],
   "products": [
@@ -22,6 +246,26 @@
       "id": 1,
       "name": "Laptop",
       "price": 999.99
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "price": 799.99
+    },
+    {
+      "id": 3,
+      "name": "Tablet",
+      "price": 499.99
+    },
+    {
+      "id": 4,
+      "name": "Headphones",
+      "price": 199.99
+    },
+    {
+      "id": 5,
+      "name": "Smartwatch",
+      "price": 249.99
     }
   ]
 }
