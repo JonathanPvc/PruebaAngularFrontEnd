@@ -6,8 +6,8 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule, // Necesario para pruebas con router-outlet
-        AppComponent // Si usas Standalone Components
+        RouterTestingModule,
+        AppComponent
       ],
     }).compileComponents();
   });
@@ -25,7 +25,6 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 
-  // Prueba opcional si tienes un loader global
   it('debería mostrar el loader cuando loading es true', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;

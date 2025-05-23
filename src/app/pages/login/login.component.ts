@@ -102,12 +102,6 @@ showPasswordRecoveryAlert(): void {
       icon: 'info',
       confirmButtonText: 'Entendido',
       confirmButtonColor: '#2E7D32', 
-      backdrop: `
-        rgba(0,0,0,0.4)
-        url("/assets/images/tech-support.gif")
-        center top
-        no-repeat
-      `
     });
   }
 
@@ -119,12 +113,7 @@ showPasswordRecoveryAlert(): void {
       icon: 'info',
       confirmButtonText: 'Entendido',
       confirmButtonColor: '#2E7D32', 
-      backdrop: `
-        rgba(0,0,0,0.4)
-        url("/assets/images/tech-support.gif")
-        center top
-        no-repeat
-      `
+   
     });
   }
 

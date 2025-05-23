@@ -1,0 +1,39 @@
+<mat-card class="user-detail-card">
+  <mat-card-title class="title">
+    <mat-icon class="icon-title">person</mat-icon>
+    Detalles de {{ data.name }}
+  </mat-card-title>
+
+  <mat-card-content>
+    <div class="info-grid">
+      <div class="info-item">
+        <mat-icon>person_outline</mat-icon>
+        <span><strong>Usuario:</strong> {{ data.username }}</span>
+      </div>
+      <div class="info-item">
+        <mat-icon>email</mat-icon>
+        <span><strong>Email:</strong> {{ data.email }}</span>
+      </div>
+      <div class="info-item">
+        <mat-icon>home</mat-icon>
+        <span><strong>Dirección:</strong> {{ data.address }}</span>
+      </div>
+      <div class="info-item">
+        <mat-icon>phone</mat-icon>
+        <span><strong>Teléfono:</strong> {{ data.phone }}</span>
+      </div>
+      <div class="info-item">
+        <mat-icon>badge</mat-icon>
+        <span><strong>Rol:</strong> {{ data.role }}</span>
+      </div>
+      <div class="info-item">
+        <mat-icon>verified</mat-icon>
+        <span><strong>Estado:</strong> {{ data.status }}</span>
+      </div>
+      <div class="info-item">
+        <mat-icon>event</mat-icon>
+        <span><strong>Registrado:</strong> {{ data.registeredAt | date:'mediumDate' }}</span>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

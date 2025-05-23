@@ -6,10 +6,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true, 
   imports: [RouterOutlet],
   template: `
-    <!-- Solo contiene el router outlet -->
     <router-outlet></router-outlet>
-    
-    <!-- Opcional: Puedes agregar un loader global aquí -->
     <div *ngIf="loading" class="global-loader">
       Cargando...
     </div>
@@ -20,7 +17,7 @@ import { RouterOutlet } from '@angular/router';
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(67, 23, 226, 0.5);
       color: white;
       text-align: center;
       padding: 10px;

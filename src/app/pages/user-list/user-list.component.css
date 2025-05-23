@@ -1,0 +1,62 @@
+.user-card {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.user-table {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #d32f2f;
+  padding: 1rem;
+  background-color: #fde8e8;
+  border-radius: 4px;
+}
+
+.no-users {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  padding: 1rem;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.mat-row:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.user-table {
+  min-width: 600px; /* o lo que necesite tu tabla */
+}
+@media (max-width: 600px) {
+  .user-card {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .mat-header-row, .mat-row {
+    padding: 0 8px;
+  }
+}
