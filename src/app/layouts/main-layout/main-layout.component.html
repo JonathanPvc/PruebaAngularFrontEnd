@@ -1,6 +1,10 @@
-<nav style="display: flex; justify-content: flex-end; padding: 1rem;"class="navbar" >
-    <button style="padding: 0.5rem 1rem; background: #e53935; color: white; border: none; border-radius: 4px; cursor: pointer;">
-        Salir
-    </button>
+<nav class="navbar">
+  <div class="user-info">
+    <mat-icon class="user-icon">person</mat-icon>  
+    <span *ngIf="userName" class="user-name">  {{ userName }}</span>
+    <button class="logout-btn" (click)="logout()">Salir</button>
+  </div>
 </nav>
+
 <router-outlet></router-outlet>
+

@@ -26,7 +26,8 @@ export class AuthService {
         
         localStorage.setItem('token', 'fake-jwt-token');
         localStorage.setItem('currentUser', JSON.stringify(users[0]));
-        
+        localStorage.setItem('userName', users[0].username);
+
         return {success: true};
       }),
       catchError(error => {
