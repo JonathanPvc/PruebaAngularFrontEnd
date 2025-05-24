@@ -17,19 +17,40 @@ npm run dev
 esto ( npm run dev ) te corre el ng y el servidor local 
 
 
-si te aparece error en el servidor ejecutar
+si te aparece error en el servidor ejecutar en otra terminal o CMD
 
 json-server --watch db.json --port 3000
 
 json-server --watch ./server/db.json --port 3000
 
+Verifica q el archivo db.json este alli en server
+
+se intento desplegar en render por ello ves otro package.json y un server.js
+
+el serevidor en render fallo por las rutas de la carpeta serer  me buscar esta ruta pero es inexistente /opt/render/project/src/server/server.js
+
+la app en local no debe de tener ningun problema
+
+se hizo todo lo solicitado en la prueba
+
+navegacion 
+simular un get 
+componente padre e hijo 
+rutas padres/hijas
+login
+base de datos simulada 
+libreria de estilos 
+libreria de alertar para errores 
+manejos de errores simulados por si no llega nada de la bs simulada 
+css responsivo, estilos en linea
+
+el plus del despliegue era opcional lo intente pero no veo las configuraciones de ruta en render por tiempo no me da para ahcerlo ya hablare con la de RRHH para notificar eso.
+
+muchas gracias. 
 
 
 
-
-
-
-
+para saber si estan alli 
 ## Development server
 
 To start a local development server, run:
