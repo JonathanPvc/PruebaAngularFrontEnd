@@ -46,9 +46,15 @@ css responsivo, estilos en linea
 
 el plus del despliegue era opcional lo intente pero no veo las configuraciones de ruta en render por tiempo no me da para ahcerlo ya hablare con la de RRHH para notificar eso.
 
+en el css decidi hacer uin gradiante de los colores de la empresa y se hizo responsivo hasta para pantalla S,L, M, table , laptor y pc
+
+opte por una estructura normal de angular 
+
+src/app/components 
+
+tiene variable de entorno tanto para local(DEV) o prod 
+
 muchas gracias. 
-
-
 
 para saber si estan alli 
 ## Development server
