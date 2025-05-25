@@ -1,1 +1,1 @@
-Pasar a la rama Mastes
+Pasar a la rama Master
